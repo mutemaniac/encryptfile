@@ -8,7 +8,7 @@ import (
 
 	"io"
 
-	"github.com/mutemaniac/crypfile/util"
+	"github.com/mutemaniac/encryptfile/util"
 )
 
 var coverExistFile = false

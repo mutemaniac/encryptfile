@@ -6,8 +6,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/mutemaniac/crypfile/encryption"
-	"github.com/mutemaniac/crypfile/util"
+	"github.com/mutemaniac/encryptfile/encryption"
+	"github.com/mutemaniac/encryptfile/util"
 
 	"golang.org/x/crypto/ssh/terminal"
 )
