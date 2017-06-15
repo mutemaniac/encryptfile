@@ -1,0 +1,4 @@
+encryptfile
+*.mute
+.vscode
+.vscode/*
