@@ -1,7 +1,6 @@
 package encryption
 
 import (
-	"errors"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -86,7 +85,7 @@ func Decrypt(file string, password []byte) error {
 			} else if input == "A" {
 				coverExistFile = true
 			} else {
-				return errors.New("File " + decryptedFilename + " is exist.")
+				return nil
 			}
 		}
 	}

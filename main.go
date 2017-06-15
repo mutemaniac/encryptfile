@@ -44,7 +44,6 @@ func encryptHandle() {
 	fmt.Println("Start to encryption.")
 
 	//Read all files
-	fmt.Println("os.Args", os.Args)
 	files, err := findFile(os.Args[2:])
 	if err != nil {
 		fmt.Println("Cannot find any file.")
@@ -127,18 +126,18 @@ func findFile(filestrs []string) ([]string, error) {
 		}
 		files = append(files, subfiles...)
 	}
-
-	for i, file := range files {
-		if fileinfo, err := os.Stat(file); os.IsNotExist(err) && fileinfo.IsDir() {
+	var retFiles []string
+	for _, file := range files {
+		if fileinfo, err := os.Stat(file); os.IsNotExist(err) || fileinfo.IsDir() {
 			continue
 		}
 		adspath, err := filepath.Abs(file)
 		if err != nil {
 			continue
 		}
-		files[i] = adspath
+		retFiles = append(retFiles, adspath)
 	}
-	return files, nil
+	return retFiles, nil
 }
 
 func validateEncryptedFiles(files []string) []string {
